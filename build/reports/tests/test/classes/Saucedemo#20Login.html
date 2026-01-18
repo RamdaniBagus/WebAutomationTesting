@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Saucedemo Login</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Saucedemo Login</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Saucedemo Login</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">14.726s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Login fails with empty username</td>
+<td class="success">3.618s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Login fails with wrong password</td>
+<td class="success">3.939s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Successful login with valid credentials</td>
+<td class="success">7.169s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Feature: Saucedemo Login
+
+  Scenario: Successful login with valid credentials # src/test/resources/features/login.feature:3
+    Given user navigates to saucedemo login         # LoginSteps.openLoginPage()
+    When user enters username &quot;standard_user&quot;       # LoginSteps.enterUsername(String)
+    And user enters password &quot;secret_sauce&quot;         # LoginSteps.enterPassword(String)
+    And user submits login                          # LoginSteps.submitLogin()
+    Then user should see inventory page             # LoginSteps.checkInventory()
+
+  Scenario: Login fails with wrong password   # src/test/resources/features/login.feature:10
+    Given user navigates to saucedemo login   # LoginSteps.openLoginPage()
+    When user enters username &quot;standard_user&quot; # LoginSteps.enterUsername(String)
+    And user enters password &quot;wrongpass&quot;      # LoginSteps.enterPassword(String)
+    And user submits login                    # LoginSteps.submitLogin()
+    Then error message should be shown        # LoginSteps.checkError()
+
+  Scenario: Login fails with empty username # src/test/resources/features/login.feature:17
+    Given user navigates to saucedemo login # LoginSteps.openLoginPage()
+    When user enters username &quot;&quot;            # LoginSteps.enterUsername(String)
+    And user enters password &quot;secret_sauce&quot; # LoginSteps.enterPassword(String)
+    And user submits login                  # LoginSteps.submitLogin()
+    Then error message should be shown      # LoginSteps.checkError()
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Starting ChromeDriver 143.0.7499.192 (be2c1f4fd451578a9ada68a0ac12d659362b44bf-refs/branch-heads/7499@{#4083}) on port 9774
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 9774.
+Jan 18, 2026 4:04:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 143.0.7499.192 (be2c1f4fd451578a9ada68a0ac12d659362b44bf-refs/branch-heads/7499@{#4083}) on port 6532
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 6532.
+Jan 18, 2026 4:04:27 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 143.0.7499.192 (be2c1f4fd451578a9ada68a0ac12d659362b44bf-refs/branch-heads/7499@{#4083}) on port 38972
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 38972.
+Jan 18, 2026 4:04:31 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at Jan 18, 2026, 4:04:34 PM</p>
+</div>
+</div>
+</body>
+</html>

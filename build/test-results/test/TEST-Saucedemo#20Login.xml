@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Saucedemo Login" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-01-18T09:04:19" hostname="DESKTOP-LGU050V" time="14.736">
+  <properties/>
+  <testcase name="Successful login with valid credentials" classname="Saucedemo Login" time="7.169"/>
+  <testcase name="Login fails with wrong password" classname="Saucedemo Login" time="3.939"/>
+  <testcase name="Login fails with empty username" classname="Saucedemo Login" time="3.618"/>
+  <system-out><![CDATA[Feature: Saucedemo Login
+
+  Scenario: Successful login with valid credentials # src/test/resources/features/login.feature:3
+    Given user navigates to saucedemo login         # LoginSteps.openLoginPage()
+    When user enters username "standard_user"       # LoginSteps.enterUsername(String)
+    And user enters password "secret_sauce"         # LoginSteps.enterPassword(String)
+    And user submits login                          # LoginSteps.submitLogin()
+    Then user should see inventory page             # LoginSteps.checkInventory()
+
+  Scenario: Login fails with wrong password   # src/test/resources/features/login.feature:10
+    Given user navigates to saucedemo login   # LoginSteps.openLoginPage()
+    When user enters username "standard_user" # LoginSteps.enterUsername(String)
+    And user enters password "wrongpass"      # LoginSteps.enterPassword(String)
+    And user submits login                    # LoginSteps.submitLogin()
+    Then error message should be shown        # LoginSteps.checkError()
+
+  Scenario: Login fails with empty username # src/test/resources/features/login.feature:17
+    Given user navigates to saucedemo login # LoginSteps.openLoginPage()
+    When user enters username ""            # LoginSteps.enterUsername(String)
+    And user enters password "secret_sauce" # LoginSteps.enterPassword(String)
+    And user submits login                  # LoginSteps.submitLogin()
+    Then error message should be shown      # LoginSteps.checkError()
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 143.0.7499.192 (be2c1f4fd451578a9ada68a0ac12d659362b44bf-refs/branch-heads/7499@{#4083}) on port 9774
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 9774.
+Jan 18, 2026 4:04:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 143.0.7499.192 (be2c1f4fd451578a9ada68a0ac12d659362b44bf-refs/branch-heads/7499@{#4083}) on port 6532
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 6532.
+Jan 18, 2026 4:04:27 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 143.0.7499.192 (be2c1f4fd451578a9ada68a0ac12d659362b44bf-refs/branch-heads/7499@{#4083}) on port 38972
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 38972.
+Jan 18, 2026 4:04:31 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
