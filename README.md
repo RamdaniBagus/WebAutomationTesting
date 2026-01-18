@@ -1,8 +1,8 @@
 **🧪 Web UI Automation Framework – Saucedemo
+
 📌 Deskripsi Proyek**
 
-**Repository ini berisi framework pengujian otomatis UI Web yang dibangun menggunakan:
-**
+Repository ini berisi framework pengujian otomatis UI Web yang dibangun menggunakan:
 Java 8
 
 Gradle
